@@ -59,7 +59,7 @@ export const AdminRules: FC<AdminRulesProps> = ({
       <div>
         <button onClick={click}>Обновить результаты</button>
         <button
-          disabled={currentQuestion >= currentQuestion}
+          disabled={currentQuestion >= questions.length}
           onClick={newNewtQuestion}
         >
           next Questions

@@ -29,6 +29,5 @@ export const getData = async (childFunc: (arr: { name: string; point: { [key: nu
     };
 
     await getDataDB(func);
-    // console.log()
     childFunc(arr)
 }

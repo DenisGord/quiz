@@ -24,7 +24,6 @@ const Game = () => {
             (doc.data().question || doc.data().question === 0) &&
             start !== doc.data().question
           ) {
-            console.log("a");
             clearInterval(interval);
             setStart(doc.data().question || 0);
           }
@@ -54,7 +53,6 @@ const Game = () => {
 
   if (listenAdmin) {
     changeQuestion();
-    // setListenAdmin(false)
   }
 
   if (user === "admin") {
@@ -91,7 +89,9 @@ const Game = () => {
           />
         ) : (
           <>
-            <h1 style={{textAlign:"center"}}>Привет {user}, <br/> подожди немного, игра скоро начнется</h1>
+            <h1 style={{ textAlign: "center" }}>
+              Привет {user}, <br /> подожди немного, игра скоро начнется
+            </h1>
           </>
         )}
       </>

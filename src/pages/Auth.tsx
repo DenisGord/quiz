@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { WrapperPage } from "../components/WrapperPage";
 
-import { useNavigate } from "react-router-dom";
 import { Loader } from "../components/Loader";
 import { QueryDocumentSnapshot, DocumentData } from "firebase/firestore";
 
@@ -11,8 +10,6 @@ const Auth = () => {
   const [state, setState] = useState("");
   const [alert, setAlert] = useState(false);
   const [loader, setLoader] = useState(false);
-
-  const nav = useNavigate();
 
   const onChange = (name: string) => {
     setState(name);
@@ -69,7 +66,6 @@ const Auth = () => {
             <button onClick={addPlayer}>Добавить игрока</button>
           </>
         )}
-        {/* <Questions data={questions[0]} /> */}
       </>
     </WrapperPage>
   );

@@ -9,10 +9,6 @@ display:flex;
 align-items:center;
 justify-content:center;
 svg {
-// position: absolute;
-// top: 50%;
-// left: 50%;
-// transform: translate(-50%, -50%);
 height: 150px;
 width: 150px;}
 `
