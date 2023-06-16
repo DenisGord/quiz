@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
 import { QuestionsStyle, HeadingStyle } from "./Questions.style";
 import { QuestionButton } from "./QuestionButton";
 import { QueryDocumentSnapshot, DocumentData } from "firebase/firestore";
@@ -7,6 +7,7 @@ import { getDataDB } from "../../functions";
 import { Loader } from "../Loader";
 import { getData as getResults } from "../../functions";
 import { Results } from "../Results";
+
 export interface QuestionProps {
   data: {
     question: string;
@@ -27,6 +28,8 @@ export const Questions: FC<QuestionProps> = ({ data, id, setListenAdmin }) => {
     { name: string; point: { [key: number]: number } }[]
   >([]);
 
+  const imgRef=useRef(null)
+
   const getData = async () => {
     const func = (doc: QueryDocumentSnapshot<DocumentData>) => {
       if (doc.id === user && (doc.data()[id] || doc.data()[id] === 0)) {
@@ -34,7 +37,16 @@ export const Questions: FC<QuestionProps> = ({ data, id, setListenAdmin }) => {
       }
     };
     await getDataDB(func);
-    setLoader(false);
+    if(img){
+      await  fetch(img).then((res)=>{
+        if(res){
+          setLoader(false)
+        }
+      })
+
+    }else{
+      setLoader(false);
+    }
   };
 
   useEffect(() => {
@@ -78,7 +90,7 @@ export const Questions: FC<QuestionProps> = ({ data, id, setListenAdmin }) => {
   return (
     <>
       <QuestionsStyle>
-        {img && <img width={"30%"} src={img} alt="" />}
+        {img && <img ref={imgRef} width={"30%"} src={img} alt="" />}
         <HeadingStyle>{question}</HeadingStyle>
         <QuestionsStyle>{renderAnswers}</QuestionsStyle>
       </QuestionsStyle>

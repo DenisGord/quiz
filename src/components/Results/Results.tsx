@@ -36,8 +36,8 @@ export const Results: FC<ResultsProps> = ({ counter }) => {
 
   return (
     <>
-      {user !== "admin" && <h1>{user} ты на </h1>}
-      <ListStyle>{renderResult}</ListStyle>;
+      <h1>Промежуточные результаты</h1>
+      <ListStyle>{renderResult}</ListStyle>
     </>
   );
 };

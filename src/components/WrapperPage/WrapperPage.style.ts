@@ -8,4 +8,5 @@ export const WrapperPageStyle = styled.div`
     width:100vw;
     height:100vh;
     position:relative;
+    text-align:center;
 `

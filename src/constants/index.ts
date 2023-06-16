@@ -3,83 +3,90 @@ import { getFirestore } from "firebase/firestore";
 
 export const questions = [
     {
-        question: 'где раки зимуют',
-        img:'https://kakoy-smysl.ru/wp-content/uploads/2020/04/TASS_1572812_d_850.jpg',
+        question: "Сколько лет Андрею Шандановину",
         answers: [
-            { answer: 'в пизде', right: true },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' }
+            { answer: "21", },
+            { answer: "22", },
+            { answer: "23", right: true },
+            { answer: "24", }
         ]
     },
     {
-        question: 'а рыба где',
+        question: "Что открыл Андрей в морозовке",
         answers: [
-            { answer: 'в пизде', right: true },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' }
-        ],
-        img:'https://kakoy-smysl.ru/wp-content/uploads/2020/04/TASS_1572812_d_850.jpg',
-
+            { answer: "Банку пива", right: true },
+            { answer: "Баскетбол",  },
+            { answer: "Америку",  },
+            { answer: "КВН",  }
+        ]
     },
     {
-        question: 'дом для улитки',
+        question: "Каких букв нет в имени Андрей",
         answers: [
-            { answer: 'в пизде', right: true },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' }
-        ],
-        img:'https://kakoy-smysl.ru/wp-content/uploads/2020/04/TASS_1572812_d_850.jpg',
-
+            { answer: "А",  },
+            { answer: "Г", right: true },
+            { answer: "Д",  },
+            { answer: "Н",  }
+        ]
     },
     {
-        question: 'прпрпрппр',
+        question:
+            "Какого цвета футблока, была на Андрее на вечеринке в конезаводе, где были Денис Юля и Никита ",
         answers: [
-            { answer: 'в пизде', right: true },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' }
-        ],
-        img:'https://kakoy-smysl.ru/wp-content/uploads/2020/04/TASS_1572812_d_850.jpg',
-
+            { answer: "Белая",  },
+            { answer: "Черная", right: true },
+            { answer: "Серая",  },
+            { answer: "Синяя",  }
+        ]
     },
     {
-        question: 'клизма',
+        question: "Кто нарисован слева от Андрея, на его третьей фотографии в вк",
         answers: [
-            { answer: 'в пизде', right: true },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' }
-        ],
-
-        img:'https://kakoy-smysl.ru/wp-content/uploads/2020/04/TASS_1572812_d_850.jpg',
-
+            { answer: "Кот",  },
+            { answer: "Собака",  },
+            { answer: "Белка",  },
+            { answer: "Лиса", right: true }
+        ]
     },
     {
-        question: 'gena',
+        question: "Сколько подарков у Андрея в вк",
         answers: [
-            { answer: 'в пизде', right: true },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' }
-        ],
-        img:'https://kakoy-smysl.ru/wp-content/uploads/2020/04/TASS_1572812_d_850.jpg',
-
+            { answer: "60",  },
+            { answer: "73",  },
+            { answer: "80", right: true },
+            { answer: "87",  }
+        ]
     },
     {
-        question: 'lena',
+        question:
+            'Сколько сообщений пропустил Андрей в группе "Круги ДНД" пока был на корпаротиве',
         answers: [
-            { answer: 'в пизде', right: true },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' },
-            { answer: 'в пизде' }
-        ],
-        img:'https://kakoy-smysl.ru/wp-content/uploads/2020/04/TASS_1572812_d_850.jpg',
-
+            { answer: "290",  },
+            { answer: "291",  },
+            { answer: "292", right: true },
+            { answer: "293", }
+        ]
     },
-    
+    {
+        question:
+            "Какого числа опубликована самая первая фотография Андрея в инстаграме",
+        answers: [
+            { answer: "25 мая 2016", right: true },
+            { answer: "26 мая 2016",  },
+            { answer: "25 мая 2015",  },
+            { answer: "24 мая 2016",  }
+        ]
+    },
+    {
+        question: "Что набито на левой груди у Андрея (по мнению Дениса) ",
+        answers: [
+            { answer: "Плутон", },
+            { answer: "Юпитер", },
+            { answer: "Венера",},
+            { answer: "Сатурн", right: true }
+        ]
+    },
+
 ]
 
 const firebaseConfig = {
@@ -89,6 +96,7 @@ const firebaseConfig = {
     storageBucket: "quiz-b9761.appspot.com",
     messagingSenderId: "277365255917",
     appId: "1:277365255917:web:785b6ed3b8380614a026e4",
+    databaseURL: "https://quiz-b9761-default-rtdb.europe-west1.firebasedatabase.app/",
 };
 
 export const app = initializeApp(firebaseConfig);

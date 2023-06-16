@@ -5,6 +5,8 @@ import { Loader } from "../components/Loader";
 import { QueryDocumentSnapshot, DocumentData } from "firebase/firestore";
 
 import { addUsersPoints, getDataDB } from "../functions";
+import Input from "../components/Input/Input";
+import Button from "../components/Button/Button";
 
 const Auth = () => {
   const [state, setState] = useState("");
@@ -59,11 +61,9 @@ const Auth = () => {
         ) : (
           <>
             {alert && <h2>Упс такое имя уже занято, выберите другое</h2>}
-            <input
-              type="text"
-              onChange={({ target }) => onChange(target.value)}
-            />
-            <button onClick={addPlayer}>Добавить игрока</button>
+            <Input onChange={onChange} />
+            <Button disabled={!state} onClick={addPlayer} title={"Добавить игрока"}/>
+            {/* <button onClick={addPlayer}>Добавить игрока</button> */}
           </>
         )}
       </>
